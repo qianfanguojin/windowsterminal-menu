@@ -6,6 +6,7 @@
 
 *A project backed by [LeXtudio Inc.](https://www.lextudio.com)* 
 
+### 注意：Win 11 的新版右键菜单暂不支持
 感谢原作提供的工具，笔者在这里对其中的内容进行翻译，以及本地化修改。
 
 有时候，我们往往需要在某个目录进入控制台窗口，特别是在某个目录打开管理员窗口，而大多数控制台的默认路径都会从用户家目录出发，不太方便。
@@ -33,6 +34,8 @@
    >
    > ```powershell
    > 'https://cdn.jsdelivr.net/gh/qianfanguojin/windowsterminal-menu/install.ps1'
+   > 或
+   > 'https://fastly.jsdelivr.net/gh/qianfanguojin/windowsterminal-menu/install.ps1'
    > ```
    >
    > 
