@@ -1,3 +1,9 @@
+---
+typora-copy-images-to: .
+---
+
+
+
 ## 将 Windows Terminal 添加到 Windows 右键菜单的 Powershell 脚本
 
 原项目：
@@ -6,14 +12,15 @@
 
 *A project backed by [LeXtudio Inc.](https://www.lextudio.com)* 
 
-### 注意：Win 11 的新版右键菜单暂不支持
+目前只能比较完美地支持 windows 10 , 如使用 windows 11，请参考下文：<a href="#windows-11-%E9%85%8D%E7%BD%AE%E4%B8%B4%E6%97%B6">Windows 11 配置（临时）</a>
+
 感谢原作提供的工具，笔者在这里对其中的内容进行翻译，以及本地化修改。
 
 有时候，我们往往需要在某个目录进入控制台窗口，特别是在某个目录打开管理员窗口，而大多数控制台的默认路径都会从用户家目录出发，不太方便。
 
 此脚本的目的就是为了解决这个问题，实现的效果如下：
 
-![image-20211103204906670](default.jpg)
+![default](default.jpg)
 
 ### 安装
 
@@ -39,6 +46,34 @@
    > ```
    >
    > 
+
+#### Windows 11 配置（临时）
+
+由于 Win 11 对右键菜单做了限制，上述配置的效果无法在右键菜单的一级菜单显示，只能点击 **显示更多选项** 进入经典菜单才能看到。
+
+这明显不太方便，如果要配置到新版右键菜单，必须编写应用程序实现相关接口，具体查看：[扩展Win11的新右键菜单 - 天方 - 博客园 (cnblogs.com)](https://www.cnblogs.com/TianFang/p/15390878.html)
+
+最后，我在 V2ex 中发现了有大佬做了相关应用，虽然没有上述配置好的方便，但也可用，而且还可以扩展使用其他应用。
+
+应用的开源地址：[ikas-mc/ContextMenuForWindows11: Add Custom Context Menu For Windows11 (github.com)](https://github.com/ikas-mc/ContextMenuForWindows11)
+
+下面我就以这个应用为基础来一步一步配置 powershell 到新版右键菜单。
+
+1. 安装 V2ex 大佬开发的自定义右键菜单应用：[Custom Context Menu - Microsoft Store Apps](https://apps.microsoft.com/store/detail/custom-context-menu/9PC7BZZ28G0X?hl=en-us&gl=us) 或 [Custom Context Menu - Microsoft Store Apps New](https://apps.microsoft.com/store/detail/custom-context-menu/9PC7BZZ28G0X)
+
+2. 打开该应用，参考图片配置：
+
+   ![win11-powershell](win11-powershell.png)
+
+3. 如果需要配置管理员启动，则需要提权。我们借用一个 helper.vbs 脚本来实现。下载本仓库的 [helper.vbs](https://raw.githubusercontent.com/qianfanguojin/windowsterminal-menu/main/helper.vbs) 到自己电脑上，并将其复制到一个自定义目录（如 `C:\\Users\\yifan\\helper.vbs`）。进行下图配置：
+
+   ![win11-powershell-power](win11-powershell-power.png)
+
+最后的效果：
+
+![win11-result.png](win11-result.png)
+
+
 
 ### 卸载
 
